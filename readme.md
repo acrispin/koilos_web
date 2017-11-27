@@ -26,5 +26,5 @@ Migrate
 Create superuser
     $ python manage.py createsuperuser
 
-Run app
+Run app  
     $ python manage.py runserver 0.0.0.0:8001
