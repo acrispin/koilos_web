@@ -5,7 +5,10 @@ Install postgres 9.6.6
 Install python 3.6
 
 Install virtualenv   
-	$ pip install virtualenv
+	$ pip install virtualenv   
+	
+Create virtualenv in folder venv in project root   
+	$ virtualenv venv
 
 Activate virtualenv linux   
 	$ source venv/bin/activate
