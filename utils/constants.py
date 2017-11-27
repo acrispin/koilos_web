@@ -1,0 +1,6 @@
+CONTENT_TYPE_JSON = 'application/json; charset=utf-8'
+ALL_VERBS = ['GET','POST','PUT','DELETE']
+VERB_GET = 'GET'
+VERB_POST = 'POST'
+VERB_PUT = 'PUT'
+VERB_DELETE = 'DELETE'
