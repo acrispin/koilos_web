@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.db import models
 
 
-###############################################################################
+############################################################################### ModelMachine
 class ModelMachine(models.Model):
     idModelMachine = models.AutoField(primary_key=True)
     nameModelMachine = models.CharField(max_length=250)
@@ -32,7 +32,7 @@ class ModelMachineAdmin(admin.ModelAdmin):
 
 
 
-###############################################################################
+############################################################################### SeriesMachine
 class SeriesMachine(models.Model):
     idSeriesMachine = models.AutoField(primary_key=True)
     nameSeriesMachine = models.CharField(max_length=250)
@@ -62,7 +62,7 @@ class SeriesMachineAdmin(admin.ModelAdmin):
 
 
 
-###############################################################################
+############################################################################### Machine
 class Machine(models.Model):
     idMachine = models.AutoField(primary_key=True)
     nameMachine = models.CharField(max_length=250)

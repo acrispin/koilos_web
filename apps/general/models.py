@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.db import models
 
 
-###############################################################################
+############################################################################### State
 class State(models.Model):
     idState = models.AutoField(primary_key=True)
     nameState = models.CharField(max_length=250)
@@ -32,7 +32,7 @@ class StateAdmin(admin.ModelAdmin):
 
 
 
-###############################################################################
+############################################################################### Criteria
 class Criteria(models.Model):
     idCriteria = models.AutoField(primary_key=True)
     nameCriteria = models.CharField(max_length=250)
@@ -62,7 +62,7 @@ class CriteriaAdmin(admin.ModelAdmin):
 
 
 
-###############################################################################
+############################################################################### Category
 class Category(models.Model):
     idCategory = models.AutoField(primary_key=True)
     nameCategory = models.CharField(max_length=250)
@@ -92,7 +92,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 
-###############################################################################
+############################################################################### Polymer
 class Polymer(models.Model):
     idPolymer = models.AutoField(primary_key=True)
     namePolymer = models.CharField(max_length=250)
@@ -122,7 +122,7 @@ class PolymerAdmin(admin.ModelAdmin):
 
 
 
-###############################################################################
+############################################################################### Motive
 class Motive(models.Model):
     idMotive = models.AutoField(primary_key=True)
     nameMotive = models.CharField(max_length=250)
@@ -152,7 +152,7 @@ class MotiveAdmin(admin.ModelAdmin):
 
 
 
-###############################################################################
+############################################################################### Section
 class Section(models.Model):
     idSection = models.AutoField(primary_key=True)
     nameSection = models.CharField(max_length=250)
@@ -182,7 +182,7 @@ class SectionAdmin(admin.ModelAdmin):
 
 
 
-###############################################################################
+############################################################################### SubSection
 class SubSection(models.Model):
     idSubSection = models.AutoField(primary_key=True)
     nameSubSection = models.CharField(max_length=250)
@@ -212,7 +212,7 @@ class SubSectionAdmin(admin.ModelAdmin):
 
 
 
-###############################################################################
+############################################################################### DrillBit
 class DrillBit(models.Model):
     idDrillBit = models.AutoField(primary_key=True)
     codeDrillBit = models.CharField(max_length=250)

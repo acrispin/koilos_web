@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.db import models
 
 
-###############################################################################
+############################################################################### Worker
 class Worker(models.Model):
     idWorker = models.AutoField(primary_key=True)
     nameWorker = models.CharField(max_length=250)
@@ -35,7 +35,7 @@ class WorkerAdmin(admin.ModelAdmin):
 
 
 
-###############################################################################
+############################################################################### Assistant
 class Assistant(models.Model):
     idAssistant = models.AutoField(primary_key=True)
     nameAssistant = models.CharField(max_length=250)
