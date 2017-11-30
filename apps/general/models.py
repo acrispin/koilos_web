@@ -6,7 +6,7 @@ from django.db import models
 class State(models.Model):
     idState = models.AutoField(primary_key=True)
     nameState = models.CharField(max_length=250)
-    status = models.CharField(max_length=3)
+    status = models.CharField(max_length=3, default="A")
     regDate = models.DateTimeField(null=True, blank=True, auto_now_add=True, db_column='reg_date')
     regUser = models.CharField(max_length=30, null=True, blank=True, default="admin", db_column='reg_user')
     modDate = models.DateTimeField(null=True, blank=True, auto_now=True, db_column='mod_date')
@@ -36,7 +36,7 @@ class StateAdmin(admin.ModelAdmin):
 class Criteria(models.Model):
     idCriteria = models.AutoField(primary_key=True)
     nameCriteria = models.CharField(max_length=250)
-    status = models.CharField(max_length=3)
+    status = models.CharField(max_length=3, default="A")
     regDate = models.DateTimeField(null=True, blank=True, auto_now_add=True, db_column='reg_date')
     regUser = models.CharField(max_length=30, null=True, blank=True, default="admin", db_column='reg_user')
     modDate = models.DateTimeField(null=True, blank=True, auto_now=True, db_column='mod_date')
@@ -66,7 +66,7 @@ class CriteriaAdmin(admin.ModelAdmin):
 class Category(models.Model):
     idCategory = models.AutoField(primary_key=True)
     nameCategory = models.CharField(max_length=250)
-    status = models.CharField(max_length=3)
+    status = models.CharField(max_length=3, default="A")
     regDate = models.DateTimeField(null=True, blank=True, auto_now_add=True, db_column='reg_date')
     regUser = models.CharField(max_length=30, null=True, blank=True, default="admin", db_column='reg_user')
     modDate = models.DateTimeField(null=True, blank=True, auto_now=True, db_column='mod_date')
@@ -96,7 +96,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class Polymer(models.Model):
     idPolymer = models.AutoField(primary_key=True)
     namePolymer = models.CharField(max_length=250)
-    status = models.CharField(max_length=3)
+    status = models.CharField(max_length=3, default="A")
     regDate = models.DateTimeField(null=True, blank=True, auto_now_add=True, db_column='reg_date')
     regUser = models.CharField(max_length=30, null=True, blank=True, default="admin", db_column='reg_user')
     modDate = models.DateTimeField(null=True, blank=True, auto_now=True, db_column='mod_date')
@@ -126,7 +126,7 @@ class PolymerAdmin(admin.ModelAdmin):
 class Motive(models.Model):
     idMotive = models.AutoField(primary_key=True)
     nameMotive = models.CharField(max_length=250)
-    status = models.CharField(max_length=3)
+    status = models.CharField(max_length=3, default="A")
     regDate = models.DateTimeField(null=True, blank=True, auto_now_add=True, db_column='reg_date')
     regUser = models.CharField(max_length=30, null=True, blank=True, default="admin", db_column='reg_user')
     modDate = models.DateTimeField(null=True, blank=True, auto_now=True, db_column='mod_date')
@@ -156,7 +156,7 @@ class MotiveAdmin(admin.ModelAdmin):
 class Section(models.Model):
     idSection = models.AutoField(primary_key=True)
     nameSection = models.CharField(max_length=250)
-    status = models.CharField(max_length=3)
+    status = models.CharField(max_length=3, default="A")
     regDate = models.DateTimeField(null=True, blank=True, auto_now_add=True, db_column='reg_date')
     regUser = models.CharField(max_length=30, null=True, blank=True, default="admin", db_column='reg_user')
     modDate = models.DateTimeField(null=True, blank=True, auto_now=True, db_column='mod_date')
@@ -186,7 +186,7 @@ class SectionAdmin(admin.ModelAdmin):
 class SubSection(models.Model):
     idSubSection = models.AutoField(primary_key=True)
     nameSubSection = models.CharField(max_length=250)
-    status = models.CharField(max_length=3)
+    status = models.CharField(max_length=3, default="A")
     regDate = models.DateTimeField(null=True, blank=True, auto_now_add=True, db_column='reg_date')
     regUser = models.CharField(max_length=30, null=True, blank=True, default="admin", db_column='reg_user')
     modDate = models.DateTimeField(null=True, blank=True, auto_now=True, db_column='mod_date')
@@ -216,7 +216,7 @@ class SubSectionAdmin(admin.ModelAdmin):
 class DrillBit(models.Model):
     idDrillBit = models.AutoField(primary_key=True)
     codeDrillBit = models.CharField(max_length=250)
-    status = models.CharField(max_length=3)
+    status = models.CharField(max_length=3, default="A")
     regDate = models.DateTimeField(null=True, blank=True, auto_now_add=True, db_column='reg_date')
     regUser = models.CharField(max_length=30, null=True, blank=True, default="admin", db_column='reg_user')
     modDate = models.DateTimeField(null=True, blank=True, auto_now=True, db_column='mod_date')

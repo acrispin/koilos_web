@@ -6,7 +6,7 @@ from django.db import models
 class ModelMachine(models.Model):
     idModelMachine = models.AutoField(primary_key=True)
     nameModelMachine = models.CharField(max_length=250)
-    status = models.CharField(max_length=3)
+    status = models.CharField(max_length=3, default="A")
     regDate = models.DateTimeField(null=True, blank=True, auto_now_add=True, db_column='reg_date')
     regUser = models.CharField(max_length=30, null=True, blank=True, default="admin", db_column='reg_user')
     modDate = models.DateTimeField(null=True, blank=True, auto_now=True, db_column='mod_date')
@@ -36,7 +36,7 @@ class ModelMachineAdmin(admin.ModelAdmin):
 class SeriesMachine(models.Model):
     idSeriesMachine = models.AutoField(primary_key=True)
     nameSeriesMachine = models.CharField(max_length=250)
-    status = models.CharField(max_length=3)
+    status = models.CharField(max_length=3, default="A")
     regDate = models.DateTimeField(null=True, blank=True, auto_now_add=True, db_column='reg_date')
     regUser = models.CharField(max_length=30, null=True, blank=True, default="admin", db_column='reg_user')
     modDate = models.DateTimeField(null=True, blank=True, auto_now=True, db_column='mod_date')
@@ -68,7 +68,7 @@ class Machine(models.Model):
     nameMachine = models.CharField(max_length=250)
     idModelMachine = models.ForeignKey(ModelMachine, db_column='idModelMachine')
     idSeriesMachine = models.ForeignKey(SeriesMachine, db_column='idSeriesMachine')
-    status = models.CharField(max_length=3)
+    status = models.CharField(max_length=3, default="A")
     regDate = models.DateTimeField(null=True, blank=True, auto_now_add=True, db_column='reg_date')
     regUser = models.CharField(max_length=30, null=True, blank=True, default="admin", db_column='reg_user')
     modDate = models.DateTimeField(null=True, blank=True, auto_now=True, db_column='mod_date')

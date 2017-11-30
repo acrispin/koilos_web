@@ -55,9 +55,9 @@ class Configuration(models.Model):
     azimuth = models.IntegerField(null=True, blank=True) #TODO: validar field
     attitude = models.IntegerField(null=True, blank=True) #TODO: validar field
     remiShell = models.IntegerField(null=True, blank=True) #TODO: validar field
-    amountPolymer = models.DecimalField(max_digits=10, decimal_places=2, null=True) #TODO: validar field
-    amountBentonite = models.DecimalField(max_digits=10, decimal_places=2, null=True) #TODO: validar field
-    amountBoxes = models.DecimalField(max_digits=10, decimal_places=2, null=True) #TODO: validar field
+    amountPolymer = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True) #TODO: validar field
+    amountBentonite = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True) #TODO: validar field
+    amountBoxes = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True) #TODO: validar field
     volumeWater = models.IntegerField(null=True, blank=True) #TODO: validar field
     volumeOil = models.IntegerField(null=True, blank=True) #TODO: validar field
     initialDepth = models.IntegerField(null=True, blank=True) #TODO: validar field

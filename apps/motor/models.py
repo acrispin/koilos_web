@@ -6,7 +6,7 @@ from django.db import models
 class ModelMotor(models.Model):
     idModelMotor = models.AutoField(primary_key=True)
     nameModelMotor = models.CharField(max_length=250)
-    status = models.CharField(max_length=3)
+    status = models.CharField(max_length=3, default="A")
     regDate = models.DateTimeField(null=True, blank=True, auto_now_add=True, db_column='reg_date')
     regUser = models.CharField(max_length=30, null=True, blank=True, default="admin", db_column='reg_user')
     modDate = models.DateTimeField(null=True, blank=True, auto_now=True, db_column='mod_date')
@@ -36,7 +36,7 @@ class ModelMotorAdmin(admin.ModelAdmin):
 class SeriesMotor(models.Model):
     idSeriesMotor = models.AutoField(primary_key=True)
     nameSeriesMotor = models.CharField(max_length=250)
-    status = models.CharField(max_length=3)
+    status = models.CharField(max_length=3, default="A")
     regDate = models.DateTimeField(null=True, blank=True, auto_now_add=True, db_column='reg_date')
     regUser = models.CharField(max_length=30, null=True, blank=True, default="admin", db_column='reg_user')
     modDate = models.DateTimeField(null=True, blank=True, auto_now=True, db_column='mod_date')
@@ -68,7 +68,7 @@ class Motor(models.Model):
     nameMotor = models.CharField(max_length=250)
     idModelMotor = models.ForeignKey(ModelMotor, db_column='idModelMotor')
     idSeriesMotor = models.ForeignKey(SeriesMotor, db_column='idSeriesMotor')
-    status = models.CharField(max_length=3)
+    status = models.CharField(max_length=3, default="A")
     regDate = models.DateTimeField(null=True, blank=True, auto_now_add=True, db_column='reg_date')
     regUser = models.CharField(max_length=30, null=True, blank=True, default="admin", db_column='reg_user')
     modDate = models.DateTimeField(null=True, blank=True, auto_now=True, db_column='mod_date')
