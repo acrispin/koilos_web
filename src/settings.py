@@ -25,13 +25,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_&f(v=ggy=+7m+$$%g++o#&2i7xm8w+n4-j!_c(*2jsyu9($go'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+DEPLOY_HEROKU = True
 
 # para usar el file .env o de variables de entorno
 # activar con: $ source .env
 ENV_FILE_USE = False
 
 ALLOWED_HOSTS = ['*']
+
+if not DEBUG and DEPLOY_HEROKU:
+    ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -97,7 +101,12 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'src.wsgi.application'
+# WSGI_APPLICATION = 'src.wsgi.application'
+
+if DEPLOY_HEROKU:
+    WSGI_APPLICATION = 'src.wsgi_heroku.application'
+else:
+    WSGI_APPLICATION = 'src.wsgi.application'
 
 
 # Database
@@ -181,8 +190,12 @@ STATICFILES_DIRS = (
 ## STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
-
+if DEPLOY_HEROKU:
+    import dj_database_url
+    DATABASES['default'] =  dj_database_url.config()
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    ALLOWED_HOSTS = ['*']
+    STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 LOGFILE_NAME = os.path.join(BASE_DIR,  'logs/app.log')
